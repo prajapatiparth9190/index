@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Types of Operating Systems</title>
+  <style>
+    /* Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    background-color: #f8f8f8;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Types of Operating Systems</h1>
+    </header>
+
+    <section id="osTypes">
+      <h2>List of OS Types</h2>
+      <ul id="osList"></ul>
+    </section>
+
+    <footer>
+      <button onclick="loadOSTypes()">Load OS Types</button>
+    </footer>
+  </div>
+
+  <script>
+    // JavaScript code to load types of Operating Systems
+function loadOSTypes() {
+    // Define the types of operating systems
+    const osTypes = [
+      {
+        name: "Desktop Operating Systems",
+        examples: ["Windows", "macOS", "Linux"]
+      },
+      {
+        name: "Server Operating Systems",
+        examples: ["Windows Server", "Linux Server", "Unix", "Ubuntu Server"]
+      },
+      {
+        name: "Mobile Operating Systems",
+        examples: ["Android", "iOS", "Windows Phone"]
+      },
+      {
+        name: "Embedded Operating Systems",
+        examples: ["RTOS (Real-Time OS)", "FreeRTOS", "VxWorks"]
+      },
+      {
+        name: "Network Operating Systems",
+        examples: ["Novell NetWare", "Windows Server", "Linux"]
+      }
+    ];
+  
+    // Get the container to display OS types
+    const osList = document.getElementById("osList");
+    osList.innerHTML = ''; // Clear the existing list
+  
+    // Loop through each OS type and display its name and examples
+    osTypes.forEach(osType => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `<strong>${osType.name}:</strong><br><ul>${osType.examples.map(os => `<li>${os}</li>`).join('')}</ul>`;
+      osList.appendChild(listItem);
+    });
+  }
+  
+  </script>
+</body>
+</html>
